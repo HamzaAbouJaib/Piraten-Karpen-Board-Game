@@ -7,3 +7,4 @@
 | January 15th | Updated Definition of Done in the README.md file |
 | January 18th | Created the Player class |
 | January 18th | Created a function to roll eight dice in the Player class |
+| January 18th | Created a function to re-roll randomly selected non-skull dice |
