@@ -18,4 +18,14 @@ public class Player {
         }
         return dice;
     }
+
+    public Faces[] rerollDice(Faces[] dice) {
+        int availableDice = 8;
+        for(Faces die: dice){
+            if(die == Faces.SKULL){
+                availableDice--;
+            }
+        }
+
+    }
 }
