@@ -47,4 +47,8 @@ public class Player {
         }
         return dice;
     }
+
+    public void updateScore(Faces[] dice) {
+        int score = 0;
+    }
 }
