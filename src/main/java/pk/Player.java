@@ -50,5 +50,10 @@ public class Player {
 
     public void updateScore(Faces[] dice) {
         int score = 0;
+        // loop over the rolled dice and add one to score if they die rolled a diamond or a gold
+        for(Faces die: dice) {
+            if(die == Faces.DIAMOND || die == Faces.GOLD) score++;
+        }
+        this.score += score*100;
     }
 }
