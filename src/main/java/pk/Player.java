@@ -8,4 +8,14 @@ public class Player {
         this.playerID = ID;
         this.score = 0;
     }
+
+    public Faces[] rollEightDice() {
+        int numOfDice = 8;
+        Faces[] dice = new Faces[numOfDice];
+        for (int i = 0; i < numOfDice; i++) {
+            Dice die = new Dice();
+            dice[i] = die.roll();
+        }
+        return dice;
+    }
 }
