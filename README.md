@@ -40,5 +40,8 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x    | F10 | Randomly select and re-roll non skull dice                                                                                                                                                                                                | D      | 01/18/23 | 01/18/23  |
 | x    | F11 | Strategy: choose randomly the dice the player is keeping and ones the player is re-rolling until either three skulls are obtained or the player decides to end their turn to end the turn (dice that land on a skull cannot be rerolled). | D      | 01/18/23 | 01/18/23  | 
 | ...  | ... | ...                                                                                                                                                                                                                                       |
+
+
+
 *Note: Features start at F02
 
