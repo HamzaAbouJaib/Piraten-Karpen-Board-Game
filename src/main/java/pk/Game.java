@@ -1,6 +1,19 @@
 package pk;
 
 public class Game {
+
+    public void gameRound(Player p1, Player p2){
+        // Keep playing turns until a player's score exceeds 6000
+        while(true) {
+            if(p2.score >= 6000) break;
+            turn(p1);
+            if(p1.score >= 6000) break;
+            turn(p2);
+        }
+        System.out.println("game done");
+
+    }
+
     public void turn(Player p) {
         // At the start of a turn roll 8 dice
         Faces[] dice= p.rollEightDice();
