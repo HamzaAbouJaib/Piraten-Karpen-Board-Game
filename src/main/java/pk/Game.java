@@ -13,4 +13,17 @@ public class Game {
             // Do something
         }
     }
+
+    public boolean skullCountChecker(Faces[] dice){
+        int num_of_skulls = 0;
+        // Calculate the number of skulls in a given roll
+        for (Faces die: dice) {
+            if(die == Faces.SKULL){
+                num_of_skulls++;
+            }
+        }
+        // return if the number of dice is >= 3 meaning the players turn ended.
+        return num_of_skulls >= 3;
+    }
+
 }
