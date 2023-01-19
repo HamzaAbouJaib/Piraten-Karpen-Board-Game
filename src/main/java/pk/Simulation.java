@@ -5,6 +5,8 @@ public class Simulation {
         Player p1 = new Player(1);
         Player p2 = new Player(2);
         Game game = new Game();
+        // Keep track of each player's wins
+        // index 0 is for player 1 and index 1 is for player 2
         int[] playerwins = {0, 0};
         for (int i = 1; i < 43; i++) {
             p1.score = 0;
