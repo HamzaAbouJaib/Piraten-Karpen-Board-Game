@@ -22,6 +22,7 @@ public class Simulation {
                 playerwins[1]++;
             }
         }
+        System.out.println("42 games have been played.");
         System.out.println("Player 1's win percentage is: " + Math.round((playerwins[0] / 42.0) * 100) + "%");
         System.out.println("Player 2's win percentage is: " + Math.round((playerwins[1] / 42.0) * 100) + "%");
     }
