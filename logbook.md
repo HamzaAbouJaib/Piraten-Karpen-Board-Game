@@ -13,3 +13,4 @@
 | January 18th  | Created a function to handle running a single turn                                                |
 | January 18th  | Created a function to return whether three or more skulls have been rolled                        | 
 | January 18th  | Created a function to run a single game and keep playing turns until a player reaches 6000 points |
+| January 18th  | Created the Simulation class                                                                      |
