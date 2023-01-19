@@ -46,7 +46,6 @@ public class Game {
             if (!skullCountChecker(dice)) p.updateScore(dice);
             System.out.println("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
-        System.out.println("turn done");
     }
 
     public boolean skullCountChecker(Faces[] dice){
