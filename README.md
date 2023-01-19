@@ -29,7 +29,6 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 
 | MVP? | Id  | Feature                                                                                                                                                                                                                                   | Status | Started  | Delivered |
 |------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------|
-| x    | F01 | Roll a dice                                                                                                                                                                                                                               | D      | 01/01/23 | 01/10/23  |
 | x    | F02 | Roll eight dices                                                                                                                                                                                                                          | D      | 01/18/23 | 01/18/23  |
 | x    | F03 | Players always play 42 games                                                                                                                                                                                                              | D      | 01/18/23 | 01/18/23  |
 | x    | F04 | Show win percentage of each player after the games are done                                                                                                                                                                               | D      | 01/18/23 | 01/18/23  |
@@ -41,5 +40,5 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 | x    | F10 | Randomly select and re-roll non skull dice                                                                                                                                                                                                | D      | 01/18/23 | 01/18/23  |
 | x    | F11 | Strategy: choose randomly the dice the player is keeping and ones the player is re-rolling until either three skulls are obtained or the player decides to end their turn to end the turn (dice that land on a skull cannot be rerolled). | D      | 01/18/23 | 01/18/23  | 
 | ...  | ... | ...                                                                                                                                                                                                                                       |
-
+*Note: Features start at F02
 
