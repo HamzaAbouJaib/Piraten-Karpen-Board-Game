@@ -23,29 +23,35 @@ public class Game {
         if (skullCountChecker(dice)){
             System.out.println("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
         } else {
-            // simulates a player deciding to re-roll or keep their roll by basically a coin flip
-            while(true) {
-                boolean reroll = Math.random() > 0.5;
-                if(reroll) {
-                    // Re-roll non skull dice and print the result of the re-roll
-                    dice = p.rerollDice(dice);
-                    System.out.print("Player " + p.playerID + "'s new roll: ");
-                    for (Faces die : dice) System.out.print(die + ", ");
-                    System.out.println();
-                    // check if the number of skulls surpassed or equals 3 after the re-roll
-                    if (skullCountChecker(dice)) {
-                        System.out.println("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
-                        break;
-                    }
-                } else {
-                    // simulates the player deciding to keep his roll
-                    break;
-                }
-            }
+            // roll the dice using the players strategy
+            dice = strategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
             if (!skullCountChecker(dice)) p.updateScore(dice);
             System.out.println("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
+    }
+
+    public Faces[] strategy(Faces[] dice, Player p) {
+        // simulates a player deciding to re-roll or keep their roll by basically a coin flip
+        while(true) {
+            boolean reroll = Math.random() > 0.5;
+            if(reroll) {
+                // Re-roll non skull dice and print the result of the re-roll
+                dice = p.rerollDice(dice);
+                System.out.print("Player " + p.playerID + "'s new roll: ");
+                for (Faces die : dice) System.out.print(die + ", ");
+                System.out.println();
+                // check if the number of skulls surpassed or equals 3 after the re-roll
+                if (skullCountChecker(dice)) {
+                    System.out.println("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+                    break;
+                }
+            } else {
+                // simulates the player deciding to keep his roll
+                break;
+            }
+        }
+        return dice;
     }
 
     public boolean skullCountChecker(Faces[] dice){
