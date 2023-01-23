@@ -20,3 +20,4 @@
 | January 18th   | Finished Step 2                                                                                               |
 | January 18th   | Create a release called Step2 for step 2                                                                      |
 | January 22nd   | Pull out the strategy logic from the turn function and make it its own function                               |
+| January 23rd   | Implement logging through log4j                                                                               | 
