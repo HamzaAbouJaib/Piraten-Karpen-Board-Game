@@ -17,6 +17,8 @@
     * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
   * To run the project in development mode with trace mode enabled:
     * `mvn -q exec:java -Dexec.args="trace"`
+  * To run the packaged delivery with trace mode enabled:
+      * `java -jar target/piraten-karpen-jar-with-dependencies.jar trace`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
