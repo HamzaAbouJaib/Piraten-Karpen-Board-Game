@@ -14,7 +14,7 @@ public class Game {
             if(p1.score >= 6000) break;
             turn(p2);
         }
-        System.out.println("game done");
+        logger.trace("game done");
 
     }
 
@@ -23,15 +23,14 @@ public class Game {
         Faces[] dice= p.rollEightDice();
         // print the faces rolled
         for (Faces die: dice) System.out.print(die + ", ");
-        System.out.println();
         if (skullCountChecker(dice)){
-            System.out.println("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+            logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
         } else {
             // roll the dice using the players strategy
             dice = strategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
             if (!skullCountChecker(dice)) p.updateScore(dice);
-            System.out.println("Player " + p.playerID + " ended their turn with a score of " + p.score);
+            logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
     }
 
@@ -42,12 +41,11 @@ public class Game {
             if(reroll) {
                 // Re-roll non skull dice and print the result of the re-roll
                 dice = p.rerollDice(dice);
-                System.out.print("Player " + p.playerID + "'s new roll: ");
+                logger.trace("Player " + p.playerID + "'s new roll: ");
                 for (Faces die : dice) System.out.print(die + ", ");
-                System.out.println();
                 // check if the number of skulls surpassed or equals 3 after the re-roll
                 if (skullCountChecker(dice)) {
-                    System.out.println("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+                    logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
                     break;
                 }
             } else {
