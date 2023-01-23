@@ -1,6 +1,12 @@
 package pk;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class Simulation {
+
+    private static final Logger logger = LogManager.getLogger(Simulation.class);
+
     public static void runSimulation() {
         Player p1 = new Player(1);
         Player p2 = new Player(2);
