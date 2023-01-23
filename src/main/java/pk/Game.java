@@ -1,6 +1,10 @@
 package pk;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Game {
+
+    private static final Logger logger = LogManager.getLogger(Game.class);
 
     public void gameRound(Player p1, Player p2){
         // Keep playing turns until a player's score exceeds 6000
