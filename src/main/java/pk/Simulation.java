@@ -23,7 +23,7 @@ public class Simulation {
             p1.score = 0;
             p2.score = 0;
             logger.trace("Round " + i + ":");
-            game.gameRound(p1, p2);
+            game.playGame(p1, p2);
             if (p1.score > p2.score) {
                 logger.trace("Player 1 won!");
                 playerwins[0]++;

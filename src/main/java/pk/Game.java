@@ -6,16 +6,34 @@ public class Game {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
 
-    public void gameRound(Player p1, Player p2){
-        // Keep playing turns until a player's score exceeds 6000
+    public void playGame(Player p1, Player p2){
         while(true) {
-            if(p2.score >= 6000) break;
+            if(p2.score >= 6000) {
+                turn(p1);
+                if (p1.score >= 6000) {
+                    draw(p1, p2);
+                }
+                break;
+            }
             turn(p1);
-            if(p1.score >= 6000) break;
+            if(p1.score >= 6000) {
+                turn(p2);
+                if (p2.score >= 6000) {
+                    draw(p1, p2);
+                }
+                break;
+            }
             turn(p2);
         }
-        logger.trace("game done");
+        logger.trace("Game over!");
+    }
 
+    public void draw(Player p1, Player p2){
+        logger.trace("TIE");
+        do {
+            turn(p1);
+            turn(p2);
+        } while (p1.score == p2.score);
     }
 
     public void turn(Player p) {
