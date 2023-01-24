@@ -48,12 +48,25 @@ public class Player {
         return dice;
     }
 
-    public void updateScore(Faces[] dice) {
+    public void updateScore(Faces[] dice, int[] combos) {
         int score = 0;
-        // loop over the rolled dice and add one to score if they die rolled a diamond or a gold
-        for(Faces die: dice) {
-            if(die == Faces.DIAMOND || die == Faces.GOLD) score++;
+        for (Faces die: dice
+        ) {
+            if(die == Faces.DIAMOND || die == Faces.GOLD) {
+                score += 100;
+            }
         }
-        this.score += score*100;
+        for (int combo:combos) {
+            switch (combo){
+                case 3 -> score+= 100;
+                case 4 -> score += 200;
+                case 5 -> score += 500;
+                case 6 -> score += 1000;
+                case 7 -> score += 2000;
+                case 8 -> score += 4000;
+            }
+
+        }
+        this.score += score;
     }
 }

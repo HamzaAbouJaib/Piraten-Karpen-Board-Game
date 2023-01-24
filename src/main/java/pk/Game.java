@@ -29,7 +29,7 @@ public class Game {
             // roll the dice using the players strategy
             dice = strategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
-            if (!skullCountChecker(dice)) p.updateScore(dice);
+            if (!skullCountChecker(dice)) p.updateScore(dice, getCombos(dice));
             logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
     }
