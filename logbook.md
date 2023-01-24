@@ -25,4 +25,5 @@
  | January 24th   | Update rerollDice function in Player class to re-roll at least two dice                                            |
 | January 24th   | Implemented what happens in the case of a draw. Both players keep playing turns until one ends with a higher score |
 | january 24th   | Refactored the skullCountChecker function in the Game class                                                        |
+| January 24th   | Finish implementing the combo strategy along with passing command line args to decide on a player's strategy       |
 
