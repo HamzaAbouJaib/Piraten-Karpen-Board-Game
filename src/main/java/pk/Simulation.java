@@ -14,7 +14,9 @@ public class Simulation {
             Configurator.setRootLevel(Level.OFF);
         }
         Player p1 = new Player(1);
+        p1.strat = strat1;
         Player p2 = new Player(2);
+        p2.strat = strat2;
         Game game = new Game();
         // Keep track of each player's wins
         // index 0 is for player 1 and index 1 is for player 2
