@@ -27,4 +27,33 @@ public class Strategies {
         }
         return dice;
     }
+
+    public static Faces[] comboStrategy(Faces[] dice, Player p) {
+        while(true) {
+            int numOfSkulls = Game.skullCounter(dice);
+            if(numOfSkulls < 2) {
+                int[] combos = Game.getCombos(dice);
+                int largestComboIndex = 0;
+                for (int i = 1; i < combos.length; i++) {
+                    if (combos[largestComboIndex] < combos[i]) largestComboIndex = i;
+                }
+                if (numOfSkulls == 1 && combos[largestComboIndex] < 6 || numOfSkulls == 0 && combos[largestComboIndex] < 7){
+                    Dice die = new Dice();
+                    for (int i = 0; i < dice.length; i++) {
+                        if(dice[i] != Faces.values()[largestComboIndex] && dice[i] != Faces.SKULL){
+                            dice[i] = die.roll();
+                        }
+                    }
+                } else {
+                    break;
+                }
+
+            } else {
+                break;
+            }
+            logger.trace(p.playerID +"'s  re-roll " + Game.formatDiceRoll(dice));
+        }
+        logger.trace(p.playerID +"'s Final re-roll " + Game.formatDiceRoll(dice));
+        return dice;
+    }
 }
