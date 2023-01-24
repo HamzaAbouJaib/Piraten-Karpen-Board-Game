@@ -18,7 +18,6 @@ public class Strategies {
                 logger.trace(Game.formatDiceRoll(dice));
                 // check if the number of skulls surpassed or equals 3 after the re-roll
                 if (Game.skullCounter(dice) >= 3) {
-                    logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
                     break;
                 }
             } else {

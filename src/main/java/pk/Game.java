@@ -48,6 +48,7 @@ public class Game {
             dice = Strategies.randomStrategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
             if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
+            else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
             logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
     }
