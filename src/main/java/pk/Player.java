@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Player {
     int playerID;
     public int score;
+    String strat;
     Dice die = new Dice();
 
     public Player(int ID){
