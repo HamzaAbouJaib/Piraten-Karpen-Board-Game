@@ -7,7 +7,7 @@ public class Strategies {
 
     private static final Logger logger = LogManager.getLogger(Strategies.class);
 
-    public Faces[] strategy(Faces[] dice, Player p) {
+    public static Faces[] randomStrategy(Faces[] dice, Player p) {
         // simulates a player deciding to re-roll or keep their roll by basically a coin flip
         while(true) {
             boolean reroll = Math.random() > 0.5;

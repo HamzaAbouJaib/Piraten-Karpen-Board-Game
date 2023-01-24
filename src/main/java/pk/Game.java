@@ -45,7 +45,7 @@ public class Game {
             logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
         } else {
             // roll the dice using the players strategy
-            dice = strategy(dice, p);
+            dice = Strategies.randomStrategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
             if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
             logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
