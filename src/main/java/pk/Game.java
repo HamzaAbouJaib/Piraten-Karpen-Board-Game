@@ -41,13 +41,13 @@ public class Game {
         Faces[] dice= p.rollEightDice();
         // print the faces rolled
         logger.trace(formatDiceRoll(dice));
-        if (skullCountChecker(dice)){
+        if (skullCounter(dice) >= 3){
             logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
         } else {
             // roll the dice using the players strategy
             dice = strategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
-            if (!skullCountChecker(dice)) p.updateScore(dice, getCombos(dice));
+            if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
             logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
     }
@@ -62,7 +62,7 @@ public class Game {
                 logger.trace("Player " + p.playerID + "'s new roll: ");
                 logger.trace(formatDiceRoll(dice));
                 // check if the number of skulls surpassed or equals 3 after the re-roll
-                if (skullCountChecker(dice)) {
+                if (skullCounter(dice) >= 3) {
                     logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
                     break;
                 }
@@ -74,7 +74,7 @@ public class Game {
         return dice;
     }
 
-    public boolean skullCountChecker(Faces[] dice){
+    public int skullCounter(Faces[] dice){
         int num_of_skulls = 0;
         // Calculate the number of skulls in a given roll
         for (Faces die: dice) {
@@ -83,7 +83,7 @@ public class Game {
             }
         }
         // return if the number of dice is >= 3 meaning the players turn ended.
-        return num_of_skulls >= 3;
+        return num_of_skulls;
     }
 
     public int[] getCombos(Faces[] dice){
