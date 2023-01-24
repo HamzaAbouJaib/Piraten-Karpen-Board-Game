@@ -46,11 +46,11 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 |      | F12 | Score points: score points based on the combo system in the rulebook                                                                                                                                                                      | D      | 01/24/23 | 01/24/23  |
 |      | F13 | Strategy: choose what dice to re-roll and what dice to keep based on the current roll to maximize combos                                                                                                                                  | P      |
 | ...  | ... | ...                                                                                                                                                                                                                                       |
+*Note: Features start at F02
 
 ### Feature Priority In Terms of Business Value
 I think feature F12 which introduces new a new scoring system has more business value than F13, which improves the AI, as it implements a core feature of the game, the combo scoring system.
 This is more important because when the game is done and is launched, the consumers will become the human players, and they will only care about the game experience.\
 The only time F13, adding a new strategy, would have more priority is if the AI is a key part of the game, such as an AI VS. AI or a player VS. AI mode.
 
-*Note: Features start at F02
 
