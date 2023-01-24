@@ -2,6 +2,8 @@ package pk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Objects;
+
 public class Game {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
@@ -46,7 +48,7 @@ public class Game {
             logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
         } else {
             // roll the dice using the players strategy
-            dice = Strategies.randomStrategy(dice, p);
+            dice = Objects.equals(p.strat, "random") ? Strategies.randomStrategy(dice, p) : Strategies.comboStrategy(dice, p);
             // Only add the score earned in the roll if the number of skulls <= 3
             if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
             else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
