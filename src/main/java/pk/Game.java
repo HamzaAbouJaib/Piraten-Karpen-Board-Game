@@ -37,6 +37,7 @@ public class Game {
     }
 
     public void turn(Player p) {
+        logger.trace("Player " + p.playerID +"'s turn");
         // At the start of a turn roll 8 dice
         Faces[] dice= p.rollEightDice();
         // print the faces rolled
@@ -49,8 +50,8 @@ public class Game {
             // Only add the score earned in the roll if the number of skulls <= 3
             if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
             else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
-            logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
         }
+        logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
     }
 
     public static int skullCounter(Faces[] dice){
