@@ -21,3 +21,4 @@
 | January 18th   | Create a release called Step2 for step 2                                                                      |
 | January 22nd   | Pull out the strategy logic from the turn function and make it its own function                               |
 | January 23rd   | Implement logging through log4j                                                                               | 
+| January 24th   | Implement the combos system into the point scoring system of the game                                         |
