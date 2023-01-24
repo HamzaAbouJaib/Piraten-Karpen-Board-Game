@@ -1,6 +1,12 @@
 package pk;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Strategies {
+
+    private static final Logger logger = LogManager.getLogger(Strategies.class);
+
     public Faces[] strategy(Faces[] dice, Player p) {
         // simulates a player deciding to re-roll or keep their roll by basically a coin flip
         while(true) {
