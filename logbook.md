@@ -22,3 +22,4 @@
 | January 22nd   | Pull out the strategy logic from the turn function and make it its own function                               |
 | January 23rd   | Implement logging through log4j                                                                               | 
 | January 24th   | Implement the combos system into the point scoring system of the game                                         |
+ | January 24th   | Update rerollDice function in Player class to re-roll at least two dice                                       |
