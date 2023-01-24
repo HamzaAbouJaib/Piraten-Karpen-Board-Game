@@ -4,12 +4,18 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 
+import java.util.Objects;
+
 
 public class Simulation {
 
     private static final Logger logger = LogManager.getLogger(Simulation.class);
 
     public static void runSimulation(String strat1, String strat2, Boolean trace) {
+        if(!Objects.equals(strat1, "combo") && !Objects.equals(strat1, "random") && !Objects.equals(strat2, "combo") && !Objects.equals(strat2, "random")){
+            System.out.println("Invalid command line arguments");
+            System.exit(0);
+        }
         if(!trace) {
             Configurator.setRootLevel(Level.OFF);
         }
