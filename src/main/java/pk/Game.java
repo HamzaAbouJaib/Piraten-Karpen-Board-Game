@@ -70,6 +70,7 @@ public class Game {
 
     public int[] getCombos(Faces[] dice){
         //the indices represent the Face's index in the Faces enum.
+        //Ex: combos[0] represents number of monkey faces because MONKEY is the first entry in Faces enum
         int[] combos = {0 ,0 ,0 ,0 ,0};
         for (Faces die: dice) {
             switch (die){
