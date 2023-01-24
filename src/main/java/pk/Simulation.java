@@ -9,7 +9,7 @@ public class Simulation {
 
     private static final Logger logger = LogManager.getLogger(Simulation.class);
 
-    public static void runSimulation(Boolean trace) {
+    public static void runSimulation(String strat1, String strat2, Boolean trace) {
         if(!trace) {
             Configurator.setRootLevel(Level.OFF);
         }

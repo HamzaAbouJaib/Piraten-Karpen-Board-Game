@@ -7,7 +7,7 @@ public class PiratenKarpen {
     public static void main(String[] args) {
         System.out.println("Welcome to Piraten Karpen Simulator!");
         // run the simulation
-        Simulation.runSimulation(args.length > 0 && Objects.equals(args[0], "trace"));
+        if(args.length >= 2) Simulation.runSimulation(args[0], args[1], Objects.equals(args[2], "trace"));
         System.out.println("That's all folks!");
     }
     
