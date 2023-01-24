@@ -31,8 +31,8 @@ public class Player {
         }
         // stores the indices of the dice that have been rolled
         int[] usedIndices =new int[availableDice];
-        // randomly gets the number of dice that will be re-rolled
-        int iterations =(int)(Math.random() * availableDice) + 1;
+        // randomly gets the number of dice that will be re-rolled. At least two dice are rerolled.
+        int iterations = (int)Math.floor(Math.random() * (availableDice - 1) + 2);
         int counter = 0;
         while(iterations > 0) {
             // selects a random die
