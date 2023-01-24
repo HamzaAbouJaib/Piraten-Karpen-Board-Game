@@ -68,7 +68,22 @@ public class Game {
         return num_of_skulls >= 3;
     }
 
-    //
+    public int[] getCombos(Faces[] dice){
+        //the indices represent the Face's index in the Faces enum.
+        int[] combos = {0 ,0 ,0 ,0 ,0};
+        for (Faces die: dice) {
+            switch (die){
+                case MONKEY -> combos[0]++;
+                case PARROT -> combos[1]++;
+                case GOLD -> combos[2]++;
+                case DIAMOND -> combos[3]++;
+                case SABER -> combos[4]++;
+            }
+        }
+        return combos;
+    }
+
+
     public String formatDiceRoll(Faces[] dice) {
         String formated = "";
         for (Faces die:dice) {
