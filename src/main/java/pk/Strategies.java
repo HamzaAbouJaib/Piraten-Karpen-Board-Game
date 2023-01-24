@@ -9,9 +9,9 @@ public class Strategies {
                 // Re-roll non skull dice and print the result of the re-roll
                 dice = p.rerollDice(dice);
                 logger.trace("Player " + p.playerID + "'s new roll: ");
-                logger.trace(formatDiceRoll(dice));
+                logger.trace(Game.formatDiceRoll(dice));
                 // check if the number of skulls surpassed or equals 3 after the re-roll
-                if (skullCounter(dice) >= 3) {
+                if (Game.skullCounter(dice) >= 3) {
                     logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
                     break;
                 }

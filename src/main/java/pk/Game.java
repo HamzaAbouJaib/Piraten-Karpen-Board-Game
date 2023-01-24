@@ -52,7 +52,7 @@ public class Game {
         }
     }
 
-    public int skullCounter(Faces[] dice){
+    public static int skullCounter(Faces[] dice){
         int num_of_skulls = 0;
         // Calculate the number of skulls in a given roll
         for (Faces die: dice) {
@@ -64,7 +64,7 @@ public class Game {
         return num_of_skulls;
     }
 
-    public int[] getCombos(Faces[] dice){
+    public static int[] getCombos(Faces[] dice){
         //the indices represent the Face's index in the Faces enum.
         //Ex: combos[0] represents number of monkey faces because MONKEY is the first entry in Faces enum
         int[] combos = {0 ,0 ,0 ,0 ,0};
@@ -81,7 +81,7 @@ public class Game {
     }
 
 
-    public String formatDiceRoll(Faces[] dice) {
+    public static String formatDiceRoll(Faces[] dice) {
         String formated = "";
         for (Faces die:dice) {
             formated += die + ", ";
