@@ -51,10 +51,5 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 
 *Note: Features start at F02
 
-### Feature Priority In Terms of Business Value
-I think feature F12 which introduces a new scoring system has more business value than F13 and F14 as it implements a core feature of the game, the combo scoring system.
-This is more important because when the game is done and is launched, the consumers will become the human players, and they will only care about the game experience.\
-The only time F13, adding a new strategy, would have more priority is if the AI is a key part of the game, such as an AI VS. AI or a player VS. AI mode.
-F14 is an extension of F13 that allows the user to decide which type of strategy to use, and therefore it would have less priority than F13.
 
 
