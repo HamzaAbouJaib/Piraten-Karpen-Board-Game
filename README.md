@@ -9,16 +9,16 @@
     * `mvn clean`
   * To compile the project:
     * `mvn compile`
-  * To run the project in development mode:
-    * `mvn -q exec:java` (here, `-q` tells maven to be _quiet_)
+  * To run the project in development mode, the arguments for the strategies are required. Strategy options are ["combo", "random"]:
+    * `mvn -q exec:java -Dexec.args="[strategy for player 1] [strategy for player 2]"` (here, `-q` tells maven to be _quiet_)
   * To package the project as a turn-key artefact:
     * `mvn package`
-  * To run the packaged delivery:
-    * `java -jar target/piraten-karpen-jar-with-dependencies.jar` 
+  * To run the packaged delivery, the arguments for the strategies are required. Strategy options are ["combo", "random"]:
+    * `java -jar target/piraten-karpen-jar-with-dependencies.jar [strategy for player 1] [strategy for player 2]` 
   * To run the project in development mode with trace mode enabled:
-    * `mvn -q exec:java -Dexec.args="trace"`
+    * `mvn -q exec:java -Dexec.args="[strategy for player 1] [strategy for player 2] trace"`
   * To run the packaged delivery with trace mode enabled:
-      * `java -jar target/piraten-karpen-jar-with-dependencies.jar trace`
+      * `java -jar target/piraten-karpen-jar-with-dependencies.jar [strategy for player 1] [strategy for player 2] trace`
 
 Remark: **We are assuming here you are using a _real_ shell (e.g., anything but PowerShell on Windows)**
 
@@ -47,11 +47,14 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 |      | F13 | Strategy: choose what dice to re-roll and what dice to keep based on the current roll to maximize combos                                                                                                                                  | D      | 01/24/23  | 01/24/23  |
 |      | F14 | Get user input for the type of strategy each player should be using                                                                                                                                                                       | D      | 01/24/23  | 01/24/23  |
 | ...  | ... | ...                                                                                                                                                                                                                                       |
+
+
 *Note: Features start at F02
 
 ### Feature Priority In Terms of Business Value
-I think feature F12 which introduces new a new scoring system has more business value than F13, which improves the AI, as it implements a core feature of the game, the combo scoring system.
+I think feature F12 which introduces a new scoring system has more business value than F13 and F14 as it implements a core feature of the game, the combo scoring system.
 This is more important because when the game is done and is launched, the consumers will become the human players, and they will only care about the game experience.\
 The only time F13, adding a new strategy, would have more priority is if the AI is a key part of the game, such as an AI VS. AI or a player VS. AI mode.
+F14 is an extension of F13 that allows the user to decide which type of strategy to use, and therefore it would have less priority than F13.
 
 

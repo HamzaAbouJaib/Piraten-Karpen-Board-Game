@@ -27,4 +27,5 @@
 | January 24th | Refactored the skullCountChecker function in the Game class                                                        |
 | January 24th | Finish implementing the combo strategy along with passing command line args to decide on a player's strategy       |
 | January 24th | Finish implementing the ability to get user's choice for player strategies through the command line                |
+| January 24th | Finish Step 4                                                                                                      |
 

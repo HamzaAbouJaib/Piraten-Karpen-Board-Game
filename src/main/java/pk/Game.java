@@ -30,7 +30,7 @@ public class Game {
         logger.trace("Game over!");
     }
 
-    public void draw(Player p1, Player p2){
+    private void draw(Player p1, Player p2){
         logger.trace("TIE");
         do {
             turn(p1);
@@ -38,7 +38,7 @@ public class Game {
         } while (p1.score == p2.score);
     }
 
-    public void turn(Player p) {
+    private void turn(Player p) {
         logger.trace("Player " + p.playerID +"'s turn");
         // At the start of a turn roll 8 dice
         Faces[] dice= p.rollEightDice();
