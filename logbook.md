@@ -31,4 +31,5 @@
 | January 26th | Start step 5                                                                                                       |
 | January 26th | Create an enum for the different card types                                                                        |
 | January 26th | Create a class called CardDeck to handle creating, shuffling and selection of cards                                |
+| January 26th | Implement a new strategy for when a player picks up a sea battle card                                              |
 
