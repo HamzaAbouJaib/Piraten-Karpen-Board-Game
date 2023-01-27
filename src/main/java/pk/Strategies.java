@@ -59,10 +59,8 @@ public class Strategies {
     public static void seaBattleStrategy(Player p, int saberTarget) {
         Faces[] dice = p.rollEightDice();
         logger.trace("player " + p.playerID +" initial roll " + Game.formatDiceRoll(dice));
-        if (Game.skullCounter(dice) > 8-saberTarget) {
-            return;
-        }
         int saberCount = Game.getCombos(dice)[4];
+        // keep looping until the sabers rolled are equal to or greater than the target on the card
         while (saberCount < saberTarget) {
             for (int i = 0; i < dice.length; i++){
                 if(dice[i] != Faces.SABER && dice[i] != Faces.SKULL){
@@ -70,9 +68,30 @@ public class Strategies {
                 }
             }
             logger.trace("player" + p.playerID + " new roll: " + Game.formatDiceRoll(dice));
+            // end the turn when 3 or more skulls are rolled
             if(Game.skullCounter(dice) >=3) break;
+            // get the new saber count
             saberCount = Game.getCombos(dice)[4];
         }
-
+        // if the turn ended with 3 or more skulls, then the player loses the specified points
+        if (Game.skullCounter(dice) >=3){
+            switch (saberTarget){
+                case 2 -> p.score -= 300;
+                case 3 -> p.score -= 500;
+                case 4 -> p.score -= 1000;
+            }
+            logger.trace("score after sea battle defeat " + p.score);
+            return;
+        }
+        // score update after winning sea battle
+        switch (saberTarget){
+            case 2 -> p.score += 300;
+            case 3 -> p.score += 500;
+            case 4 -> p.score += 1000;
+        }
+        logger.trace("score before updateScore " + p.score);
+        // update the score with the combos and diamonds/golds gained
+        p.updateScore(dice, Game.getCombos(dice));
+        logger.trace("score after updateScore " + p.score);
     }
 }
