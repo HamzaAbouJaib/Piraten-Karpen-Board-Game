@@ -2,7 +2,7 @@ package pk;
 
 public class CardDeck {
     private final Cards[] cards = new Cards[35];
-    // stores the index of the card at the top.
+    // stores the index of the card at the top of the pile (0 is top, 34 is bottom).
     private int topCard = 0;
 
 
