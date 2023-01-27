@@ -2,6 +2,9 @@ package pk;
 
 public class CardDeck {
     private final Cards[] cards = new Cards[35];
+    // stores the index of the card at the top.
+    private int topCard = 0;
+
 
     // when a CardDeck is instantiated generate the deck.
     public CardDeck(){
@@ -37,5 +40,14 @@ public class CardDeck {
                 seaBattle4Cards--;
             }
         }
+    }
+
+    public Cards pickCard(){
+        // if the card at the top is greater than 34 it means the deck is empty and the cards need to be collected and reshuffled
+        if(topCard > 34){
+            generateDeck();
+            topCard = 0;
+        }
+        return cards[topCard++];
     }
 }
