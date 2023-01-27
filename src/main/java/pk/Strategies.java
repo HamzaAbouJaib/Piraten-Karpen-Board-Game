@@ -56,4 +56,23 @@ public class Strategies {
         logger.trace(p.playerID +"'s Final re-roll " + Game.formatDiceRoll(dice));
         return dice;
     }
+    public static void seaBattleStrategy(Player p, int saberTarget) {
+        Faces[] dice = p.rollEightDice();
+        logger.trace("player " + p.playerID +" initial roll " + Game.formatDiceRoll(dice));
+        if (Game.skullCounter(dice) > 8-saberTarget) {
+            return;
+        }
+        int saberCount = Game.getCombos(dice)[4];
+        while (saberCount < saberTarget) {
+            for (int i = 0; i < dice.length; i++){
+                if(dice[i] != Faces.SABER && dice[i] != Faces.SKULL){
+                    dice[i] = new Dice().roll();
+                }
+            }
+            logger.trace("player" + p.playerID + " new roll: " + Game.formatDiceRoll(dice));
+            if(Game.skullCounter(dice) >=3) break;
+            saberCount = Game.getCombos(dice)[4];
+        }
+
+    }
 }
