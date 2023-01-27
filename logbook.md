@@ -30,5 +30,5 @@
 | January 24th | Finish Step 4                                                                                                      |
 | January 26th | Start step 5                                                                                                       |
 | January 26th | Create an enum for the different card types                                                                        |
-| January 26th | Create a class called CardDeck to handle creating, shuffeling and selection of cards                               |
+| January 26th | Create a class called CardDeck to handle creating, shuffling and selection of cards                                |
 
