@@ -39,13 +39,13 @@ public class Game {
     }
 
     private void turn(Player p) {
+        logger.trace("Player " + p.playerID +"'s turn");
         // create an instance of the CardDeck
         CardDeck deck = new CardDeck();
         // pick a card from the deck
         Cards selectedCard = deck.pickCard();
         logger.trace("player " + p.playerID + " picked " + selectedCard);
 
-        logger.trace("Player " + p.playerID +"'s turn");
         // At the start of a turn roll 8 dice
         Faces[] dice= p.rollEightDice();
         // print the faces rolled
