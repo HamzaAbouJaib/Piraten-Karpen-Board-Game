@@ -22,10 +22,12 @@
 | January 22nd | Pull out the strategy logic from the turn function and make it its own function                                    |
 | January 23rd | Implement logging through log4j                                                                                    | 
 | January 24th | Implement the combos system into the point scoring system of the game                                              |
- | January 24th | Update rerollDice function in Player class to re-roll at least two dice                                            |
+| January 24th | Update rerollDice function in Player class to re-roll at least two dice                                            |
 | January 24th | Implemented what happens in the case of a draw. Both players keep playing turns until one ends with a higher score |
 | January 24th | Refactored the skullCountChecker function in the Game class                                                        |
 | January 24th | Finish implementing the combo strategy along with passing command line args to decide on a player's strategy       |
 | January 24th | Finish implementing the ability to get user's choice for player strategies through the command line                |
 | January 24th | Finish Step 4                                                                                                      |
+| January 26th | Start step 5                                                                                                       |
+| January 26th | Create an enum for the different card types                                                                        |
 
