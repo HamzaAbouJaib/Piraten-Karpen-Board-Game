@@ -49,7 +49,7 @@ Remark: **We are assuming here you are using a _real_ shell (e.g., anything but 
 |      | F15 | Introduce fortune cards into the game                                                                                                                                                                                                     | D      | 01/26/23 | 01/26/23  |
 |      | F16 | Shuffle cards at the start of a game and pick a card at the start of each turn and in the case all cards are used, reshuffle the cards and start picking again                                                                            | D      | 01/26/23 | 01/26/23  |
 |      | F17 | Score points: sea battle fortune card allows player to gain or lose a specified number of points                                                                                                                                          | P      |          |           |
-|      | F18 | Strategy: when a sea battle card is picked prioritize rolling sabers                                                                                                                                                                      | S      | 01/26/23 |           |
+|      | F18 | Strategy: when a sea battle card is picked prioritize rolling sabers                                                                                                                                                                      | D      | 01/26/23 | 01/26/23  |
 | ...  | ... | ...                                                                                                                                                                                                                                       |
 
 
