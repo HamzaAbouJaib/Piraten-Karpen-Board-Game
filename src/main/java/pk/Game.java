@@ -45,7 +45,6 @@ public class Game {
         Cards selectedCard = deck.pickCard();
         logger.trace("player " + p.playerID + " picked " + selectedCard);
 
-
         logger.trace("Player " + p.playerID +"'s turn");
         // At the start of a turn roll 8 dice
         Faces[] dice= p.rollEightDice();
