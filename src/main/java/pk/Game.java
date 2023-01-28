@@ -2,6 +2,7 @@ package pk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Game {
@@ -67,8 +68,9 @@ public class Game {
                         combos[0] += combos[1];
                         combos[1] = 0;
                     }
+                    logger.trace(Arrays.toString(combos));
                     // Only add the score earned in the roll if the number of skulls <= 3
-                    if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
+                    if (skullCounter(dice) < 3) p.updateScore(dice, combos);
                     else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
                 }
             }
