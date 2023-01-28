@@ -28,7 +28,7 @@ public class Strategies {
         return dice;
     }
 
-    public static Faces[] comboStrategy(Faces[] dice, Player p) {
+    public static Faces[] comboStrategy(Faces[] dice, Player p, Cards selectedCard) {
         while(true) {
             int numOfSkulls = Game.skullCounter(dice);
             if(numOfSkulls < 2) {
@@ -37,15 +37,26 @@ public class Strategies {
                 for (int i = 1; i < combos.length; i++) {
                     if (combos[largestComboIndex] < combos[i]) largestComboIndex = i;
                 }
-                if (numOfSkulls == 1 && combos[largestComboIndex] < 6 || numOfSkulls == 0 && combos[largestComboIndex] < 7){
-                    Dice die = new Dice();
-                    for (int i = 0; i < dice.length; i++) {
-                        if(dice[i] != Faces.values()[largestComboIndex] && dice[i] != Faces.SKULL){
-                            dice[i] = die.roll();
+                if (selectedCard == Cards.MONKEYBUSINESS && largestComboIndex != 2 && largestComboIndex != 3){
+                    if (numOfSkulls == 1 && combos[0] + combos[1] < 6 || numOfSkulls == 0 && combos[0] + combos[1] < 7) {
+                        for (int i = 0; i < dice.length; i++) {
+                            if (dice[i] != Faces.MONKEY && dice[i] != Faces.PARROT && dice[i] != Faces.SKULL) {
+                                dice[i] = new Dice().roll();
+                            }
                         }
+                    } else {
+                        break;
                     }
                 } else {
-                    break;
+                    if (numOfSkulls == 1 && combos[largestComboIndex] < 6 || numOfSkulls == 0 && combos[largestComboIndex] < 7) {
+                        for (int i = 0; i < dice.length; i++) {
+                            if (dice[i] != Faces.values()[largestComboIndex] && dice[i] != Faces.SKULL) {
+                                dice[i] = new Dice().roll();
+                            }
+                        }
+                    } else {
+                        break;
+                    }
                 }
 
             } else {

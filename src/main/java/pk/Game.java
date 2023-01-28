@@ -51,20 +51,26 @@ public class Game {
             case SEABATTLE2 -> Strategies.seaBattleStrategy(p, 2);
             case SEABATTLE3 -> Strategies.seaBattleStrategy(p, 3);
             case SEABATTLE4 -> Strategies.seaBattleStrategy(p, 4);
-        }
-        if(selectedCard == Cards.NOP) {
-            // At the start of a turn roll 8 dice
-            Faces[] dice = p.rollEightDice();
-            // print the faces rolled
-            logger.trace(formatDiceRoll(dice));
-            if (skullCounter(dice) >= 3) {
-                logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
-            } else {
-                // roll the dice using the players strategy
-                dice = Objects.equals(p.strat, "random") ? Strategies.randomStrategy(dice, p) : Strategies.comboStrategy(dice, p);
-                // Only add the score earned in the roll if the number of skulls <= 3
-                if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
-                else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+            default -> {
+                // At the start of a turn roll 8 dice
+                Faces[] dice = p.rollEightDice();
+                // print the faces rolled
+                logger.trace(formatDiceRoll(dice));
+                if (skullCounter(dice) >= 3) {
+                    logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+                } else {
+                    // roll the dice using the players strategy
+                    dice = Objects.equals(p.strat, "random") ? Strategies.randomStrategy(dice, p) : Strategies.comboStrategy(dice, p, selectedCard);
+                    int[] combos = getCombos(dice);
+                    // if MonkeyBusiness card is picked then join parrots and monkeys
+                    if (selectedCard == Cards.MONKEYBUSINESS) {
+                        combos[0] += combos[1];
+                        combos[1] = 0;
+                    }
+                    // Only add the score earned in the roll if the number of skulls <= 3
+                    if (skullCounter(dice) < 3) p.updateScore(dice, getCombos(dice));
+                    else logger.trace("Player " + p.playerID + " has rolled 3 or more skulls, their turn is over.");
+                }
             }
         }
         logger.trace("Player " + p.playerID + " ended their turn with a score of " + p.score);
