@@ -15,12 +15,13 @@ public class CardDeck {
         int seaBattle2Cards = 2;
         int seaBattle3Cards = 2;
         int seaBattle4Cards = 2;
+        int monkeyBusinessCards = 4;
         // create a deck filled with empty cards
         for(int i = 0; i < 35; i++) {
             cards[i] = Cards.NOP;
         }
 
-        // the next 3 while loops place the cards in a random empty location in the deck
+        // the next 4 while loops place the cards in a random empty location in the deck
         while(seaBattle2Cards > 0) {
             int randomIndex = (int) (Math.random() * 35);
             cards[randomIndex] = Cards.SEABATTLE2;
@@ -38,6 +39,13 @@ public class CardDeck {
             if (cards[randomIndex] == Cards.NOP) {
                 cards[randomIndex] = Cards.SEABATTLE4;
                 seaBattle4Cards--;
+            }
+        }
+        while(monkeyBusinessCards > 0) {
+            int randomIndex = (int) (Math.random() * 35);
+            if (cards[randomIndex] == Cards.NOP) {
+                cards[randomIndex] = Cards.MONKEYBUSINESS;
+                monkeyBusinessCards--;
             }
         }
     }
