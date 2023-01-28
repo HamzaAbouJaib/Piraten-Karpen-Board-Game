@@ -15,7 +15,7 @@ public class Game {
         while(true) {
             if(p2.score >= 6000) {
                 turn(p1);
-                if (p1.score >= 6000) {
+                if (p2.score == p1.score) {
                     draw(p1, p2);
                 }
                 break;
@@ -23,7 +23,7 @@ public class Game {
             turn(p1);
             if(p1.score >= 6000) {
                 turn(p2);
-                if (p2.score >= 6000) {
+                if (p2.score == p1.score) {
                     draw(p1, p2);
                 }
                 break;
