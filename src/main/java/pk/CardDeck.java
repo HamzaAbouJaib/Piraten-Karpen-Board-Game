@@ -28,14 +28,14 @@ public class CardDeck {
         }
         while(seaBattle3Cards > 0) {
             int randomIndex = (int) (Math.random() * 35);
-            if (cards[randomIndex] != Cards.SEABATTLE2) {
+            if (cards[randomIndex] == Cards.NOP) {
                 cards[randomIndex] = Cards.SEABATTLE3;
                 seaBattle3Cards--;
             }
         }
         while(seaBattle4Cards > 0) {
             int randomIndex = (int) (Math.random() * 35);
-            if (cards[randomIndex] != Cards.SEABATTLE2 && cards[randomIndex] != Cards.SEABATTLE3) {
+            if (cards[randomIndex] == Cards.NOP) {
                 cards[randomIndex] = Cards.SEABATTLE4;
                 seaBattle4Cards--;
             }
