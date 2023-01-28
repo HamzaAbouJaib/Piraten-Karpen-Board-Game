@@ -7,6 +7,8 @@ import java.util.Objects;
 public class Game {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
+    // create an instance of the CardDeck
+    private final CardDeck deck = new CardDeck();
 
     public void playGame(Player p1, Player p2){
         while(true) {
@@ -40,8 +42,6 @@ public class Game {
 
     private void turn(Player p) {
         logger.trace("Player " + p.playerID +"'s turn");
-        // create an instance of the CardDeck
-        CardDeck deck = new CardDeck();
         // pick a card from the deck
         Cards selectedCard = deck.pickCard();
         logger.trace("player " + p.playerID + " picked " + selectedCard);
