@@ -8,9 +8,10 @@ public class Game {
 
     private static final Logger logger = LogManager.getLogger(Game.class);
     // create an instance of the CardDeck
-    private final CardDeck deck = new CardDeck();
+    private CardDeck deck;
 
     public void playGame(Player p1, Player p2){
+        deck = new CardDeck();
         while(true) {
             if(p2.score >= 6000) {
                 turn(p1);
