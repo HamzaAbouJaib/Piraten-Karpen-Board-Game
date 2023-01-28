@@ -34,4 +34,5 @@
 | January 26th   | Implement a new strategy for when a player picks up a sea battle card                                                                       |
 | January 26th   | Add the logic for adding or subtract the specified amount of points upon winning or losing a sea battle to the sea battle strategy function |
 | January 26th   | Add the sea battle logic to the turn function in Game class                                                                                 |
+| january 28th   | Start step 6                                                                                                                                |
 
