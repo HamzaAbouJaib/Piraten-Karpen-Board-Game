@@ -37,6 +37,7 @@ public class Strategies {
                 for (int i = 1; i < combos.length; i++) {
                     if (combos[largestComboIndex] < combos[i]) largestComboIndex = i;
                 }
+                // the AI will prioritize re-rolling diamonds and golds if they are the max combo as they will provide more points
                 if (selectedCard == Cards.MONKEYBUSINESS && largestComboIndex != 2 && largestComboIndex != 3){
                     if (numOfSkulls == 1 && combos[0] + combos[1] < 6 || numOfSkulls == 0 && combos[0] + combos[1] < 7) {
                         for (int i = 0; i < dice.length; i++) {
