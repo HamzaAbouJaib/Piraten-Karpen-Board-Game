@@ -1,4 +1,4 @@
-# A1 - Piraten Karpen
+# Piraten Karpen Board Game
 
   * Author: Hamza Abou Jaib
   * Email: aboujaih@mcmaster.ca
